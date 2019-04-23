@@ -1,0 +1,39 @@
+{
+  "homepage": "https://minecraft.curseforge.com/projects/restricted-saplings",
+  "_legacyhomepage": "http://www.curse.com/mc-mods/minecraft/232166-restricted-saplings",
+  "projectId":232166,
+  "promos": {
+    "1.7.10-latest": "1.0.0",
+    "1.7.10-recommended": "1.0.0",
+    "1.8-latest": "1.1.0",
+    "1.8-recommended": "1.1.0",
+    "1.8.8-latest": "1.1.0",
+    "1.8.8-recommended": "1.1.0",
+    "1.8.9-latest": "1.1.0",
+    "1.8.9-recommended": "1.1.0",
+    "1.9-latest": "1.1.1",
+    "1.9-recommended": "1.1.1",
+    "1.12.2-latest": "1.2.0",
+    "1.12.2-recommended": "1.2.0"
+  },
+  "1.7.10": {
+    "1.0.0": "Initial Release"
+  },
+  "1.8": {
+    "1.0.0": "Initial Release",
+    "1.1.0": "Initial Release"
+  },
+  "1.8.8": {
+    "1.1.0": "Initial Release"
+  },
+  "1.8.9": {
+    "1.1.0": "Initial Release"
+  },
+  "1.9": {
+    "1.1.0": "Initial Release",
+    "1.1.1": "Fix a crash from a new API change"
+  },
+  "1.12.2": {
+    "1.2.0": "Mod rewrite for new version.  All new config file.  Now supports Crops, not just saplings."
+  }
+}
