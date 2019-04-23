@@ -1,2 +1,0 @@
-# SimpleDyes
-Forge API MOD
