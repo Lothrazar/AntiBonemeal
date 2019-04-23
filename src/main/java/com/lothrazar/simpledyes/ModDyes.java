@@ -1,10 +1,6 @@
 package com.lothrazar.simpledyes;
 
 import org.apache.logging.log4j.Logger;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -29,15 +25,6 @@ public class ModDyes {
     //    GrowthHandler grower = new GrowthHandler();
     //    MinecraftForge.TERRAIN_GEN_BUS.register(grower);
     MinecraftForge.EVENT_BUS.register(new DyeEventHandler());
-  }
-
-  public static EntityItem dropItemStackInWorld(World world, BlockPos pos, ItemStack stack) {
-    EntityItem entityItem = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), stack);
-    if (world.isRemote == false) {// do not spawn a second 'ghost' one on
-      // client side
-      world.spawnEntity(entityItem);
-    }
-    return entityItem;
   }
 
   public static void log(String string) {
