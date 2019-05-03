@@ -26,7 +26,6 @@ public class DyeEventHandler {
       long worldtime = world.getWorldTime();
       long timeWithinDay = worldtime % hours24;
       int hour = ((int) timeWithinDay) / 1000;
-      ModAnti.logger.info("   hour " + hour);
       if (hour < 17 || hour > 19) {
         //hour 18 is midnight in MC world 
         event.setCanceled(true);
