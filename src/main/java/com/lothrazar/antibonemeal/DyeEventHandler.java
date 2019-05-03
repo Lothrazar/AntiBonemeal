@@ -16,7 +16,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class DyeEventHandler {
 
-  final int hours24 = 24000;
+  final static int hours24 = 24000;
 
   @SubscribeEvent
   public void onBone(BonemealEvent event) {
@@ -34,7 +34,7 @@ public class DyeEventHandler {
         //meaning you can bonemeal grass now wooo
         //particles
         //fireworks 
-        if (world.rand.nextDouble() < 0.1) {
+        if (world.rand.nextDouble() < 0.05) {
           Entity rocket = new EntityFireworkRocket(world);
           rocket.setPosition(event.getPos().getX(), event.getPos().getY(), event.getPos().getZ());
           world.spawnEntity(rocket);
@@ -47,7 +47,7 @@ public class DyeEventHandler {
     }
   }
 
-  @SuppressWarnings("deprecation")
+  @SuppressWarnings({ "deprecation", "incomplete-switch" })
   @SideOnly(Side.CLIENT)
   @SubscribeEvent
   public void onItemTooltipEvent(ItemTooltipEvent event) {
@@ -65,43 +65,7 @@ public class DyeEventHandler {
         case BLUE:
           event.getToolTip().add(I18n.translateToLocal("item.dyePowder." + value.name().toLowerCase() + ".tooltip"));
         break;
-        case CYAN:
-        break;
-        case GRAY:
-        break;
-        case LIGHT_BLUE:
-        break;
-        case LIME:
-        break;
-        case MAGENTA:
-        break;
-        case ORANGE:
-        break;
-        case PINK:
-        break;
-        case PURPLE:
-        break;
-        case SILVER:
-        break;
-        default:
-        break;
       }
-      //item.dyePowder.black.name=Ink Sac
-      //item.dyePowder.blue.name=Lapis Lazuli
-      //item.dyePowder.brown.name=Cocoa Beans
-      //item.dyePowder.cyan.name=Cyan Dye
-      //item.dyePowder.gray.name=Grey Dye
-      //item.dyePowder.green.name=Cactus Green
-      //item.dyePowder.lightBlue.name=Light Blue Dye
-      //item.dyePowder.lime.name=Lime Dye
-      //item.dyePowder.magenta.name=Magenta Dye
-      //item.dyePowder.orange.name=Orange Dye
-      //item.dyePowder.pink.name=Pink Dye
-      //item.dyePowder.purple.name=Purple Dye
-      //item.dyePowder.red.name=Rose Red
-      //item.dyePowder.silver.name=Light Grey Dye
-      //item.dyePowder.white.name=Bone Meal
-      //item.dyePowder.yellow.name=Dandelion Yellow
     }
   }
 }
