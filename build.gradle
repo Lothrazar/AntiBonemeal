@@ -10,8 +10,8 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 version = "${mc_version}-${mod_version}"
-group= "com.lothrazar.simpledyes"
-archivesBaseName = "SimpleDyes"
+group= "com.lothrazar.antibonemeal"
+archivesBaseName = "antibonemeal"
 
 sourceCompatibility = targetCompatibility = '1.8'
 compileJava {

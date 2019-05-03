@@ -1,4 +1,4 @@
-package com.lothrazar.simpledyes;
+package com.lothrazar.antibonemeal;
 
 import net.minecraft.item.Item;
 

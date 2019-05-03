@@ -1,9 +1,13 @@
-package com.lothrazar.simpledyes;
+package com.lothrazar.antibonemeal;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityFireworkRocket;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
 //import net.minecraft.client.resources.I18n;
 import net.minecraft.util.text.translation.I18n;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -12,10 +16,35 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class DyeEventHandler {
 
+  final int hours24 = 24000;
+
   @SubscribeEvent
   public void onBone(BonemealEvent event) {
-    if (ConfigHandler.blockAllBonemeal()) {
-    event.setCanceled(true);
+    if (ConfigHandler.grassMidnight()
+        && event.getBlock().getBlock().equals(Blocks.GRASS)) {
+      World world = event.getWorld();
+      long worldtime = world.getWorldTime();
+      long timeWithinDay = worldtime % hours24;
+      int hour = ((int) timeWithinDay) / 1000;
+      ModAnti.logger.info("   hour " + hour);
+      if (hour < 17 || hour > 19) {
+        //hour 18 is midnight in MC world 
+        event.setCanceled(true);
+      }
+      else {// NOT CANCELLED
+        //meaning you can bonemeal grass now wooo
+        //particles
+        //fireworks 
+        if (world.rand.nextDouble() < 0.1) {
+          Entity rocket = new EntityFireworkRocket(world);
+          rocket.setPosition(event.getPos().getX(), event.getPos().getY(), event.getPos().getZ());
+          world.spawnEntity(rocket);
+        }
+      }
+    }
+    else {
+      //either im not grass. or i am grass and config is turned off
+      event.setCanceled(true);
     }
   }
 
@@ -29,15 +58,13 @@ public class DyeEventHandler {
       EnumDyeColor value = EnumDyeColor.byDyeDamage(meta);
       switch (value) {
         case BLACK:
-        case WHITE:
         case GREEN:
         case RED:
         case YELLOW:
-          event.getToolTip().add(I18n.translateToLocal("item.dyePowder." + value.name().toLowerCase() + ".tooltip"));
-        break;
-        case BLUE:
-        break;
+        case WHITE:
         case BROWN:
+        case BLUE:
+          event.getToolTip().add(I18n.translateToLocal("item.dyePowder." + value.name().toLowerCase() + ".tooltip"));
         break;
         case CYAN:
         break;
@@ -60,7 +87,6 @@ public class DyeEventHandler {
         default:
         break;
       }
-
       //item.dyePowder.black.name=Ink Sac
       //item.dyePowder.blue.name=Lapis Lazuli
       //item.dyePowder.brown.name=Cocoa Beans
