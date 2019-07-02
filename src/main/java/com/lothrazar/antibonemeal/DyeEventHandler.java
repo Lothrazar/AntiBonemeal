@@ -57,7 +57,6 @@ public class DyeEventHandler {
   }
 
   private void doSmoke(World world, double z, double y, double x) {
-    System.out.println(x + " true, " + world.isRemote);
     for (int i = 0; i < 20; i++) {
       world.addParticle(ParticleTypes.SMOKE, x, y, z, 0.0D, 0.2D, 0.0D);
     }
