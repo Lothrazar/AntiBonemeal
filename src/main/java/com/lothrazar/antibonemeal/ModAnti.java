@@ -21,21 +21,12 @@ public class ModAnti {
   public ModAnti() {
     // Register the setup method for modloading
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-    //
-    //    final ModLoadingContext modLoadingContext = ModLoadingContext.get();
-    //    // Register Configs
-    //    ForgeConfigSpec CONFIG = new ForgeConfigSpec.Builder().build();
-    //    modLoadingContext.registerConfig(ModConfig.Type.COMMON, CONFIG);
-    //    this.config = new ConfigHandler(CONFIG);
     //only for server starting
     MinecraftForge.EVENT_BUS.register(this);
     MinecraftForge.EVENT_BUS.register(new DyeEventHandler());
-    //ConfigHandler.loadConfig(ConfigHandler.CLIENT_CONFIG, FMLPaths.CONFIGDIR.get().resolve(MODID + "-client.toml"));
     ConfigHandler.loadConfig(ConfigHandler.COMMON_CONFIG, FMLPaths.CONFIGDIR.get().resolve(MODID + ".toml"));
   }
 
   private void setup(final FMLCommonSetupEvent event) {
-    // some preinit code
-    LOGGER.info("HELLO FROM PREINIT");
   }
 }
