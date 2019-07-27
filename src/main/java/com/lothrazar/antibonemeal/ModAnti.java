@@ -16,7 +16,7 @@ public class ModAnti {
 
   public static final String MODID = "antibonemeal";
   public static final IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
-  public static final Logger LOGGER = LogManager.getLogger();
+//  public static final Logger LOGGER = LogManager.getLogger();
 
   public ModAnti() {
     // Register the setup method for modloading

@@ -24,12 +24,12 @@ displayURL="https://minecraft.curseforge.com/projects/anti-bonemeal" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="examplemod.png" #optional
 # A text field displayed in the mod UI
-credits="Thanks for this example mod goes to Java" #optional
+credits="" #optional
 # A text field displayed in the mod UI
 authors="Lothrazar" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Disables bonemeal use, it is just White Dye."
+Bonemeal is overpowered and duplicates blocks so it is disabled now.  Except near midnight on grass, see config file."
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.examplemod]] #optional
@@ -47,6 +47,6 @@ Disables bonemeal use, it is just White Dye."
 [[dependencies.examplemod]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.14.3]"
+    versionRange="[1.14.4]"
     ordering="NONE"
     side="BOTH"
