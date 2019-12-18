@@ -1,4 +1,5 @@
 package com.lothrazar.antibonemeal;
+
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.FireworkRocketEntity;
@@ -38,7 +39,7 @@ public class DyeEventHandler {
       }
       else {// NOT CANCELLED
         //meaning you can bonemeal grass now wooo
-        doFireworks(event.getEntityPlayer(), world, z, y, x);
+        doFireworks(event.getPlayer(), world, z, y, x);
       }
     }
     else {
