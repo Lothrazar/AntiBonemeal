@@ -16,7 +16,9 @@
     "1.12.2-latest": "1.2.0",
     "1.12.2-recommended": "1.2.0",
     "1.14.4-latest": "1.0.0",
-    "1.14.4-recommended": "1.0.0"
+    "1.14.4-recommended": "1.0.0",
+    "1.15.2-latest": "1.0.0",
+    "1.15.2-recommended": "1.0.0"
   },
   "1.7.10": {
     "1.0.0": "Initial Release"
@@ -39,6 +41,9 @@
     "1.2.0": "Mod rewrite for new version.  All new config file.  Now supports Crops, not just saplings."
   },
   "1.14.4": {
+    "1.0.0": "Ported."
+  },
+  "1.15.2": {
     "1.0.0": "Ported."
   }
 }
