@@ -2,8 +2,8 @@ package com.lothrazar.antibonemeal;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.item.FireworkRocketEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.FireworkRocketEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particles.ParticleTypes;
@@ -68,7 +68,10 @@ public class DyeEventHandler {
   public void onItemTooltipEvent(ItemTooltipEvent event) {
     if (ConfigHandler.tooltipsEnabled() &&
         event.getItemStack().getItem() == Items.BONE_MEAL) {
-      event.getToolTip().add(new TranslationTextComponent(ModAnti.MODID + ".item.bone_meal.tooltip").applyTextStyle(TextFormatting.GRAY));
+      event.getToolTip().add(new TranslationTextComponent(ModAnti.MODID + ".item.bone_meal.tooltip")
+          .func_240699_a_(TextFormatting.GRAY)
+//          .applyTextStyle(TextFormatting.GRAY)
+          );
     }
   }
 }

@@ -10,12 +10,12 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
+ 
 @Mod(ModAnti.MODID)
 public class ModAnti {
 
   public static final String MODID = "antibonemeal";
-  public static final IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
+//  public static final IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 //  public static final Logger LOGGER = LogManager.getLogger();
 
   public ModAnti() {

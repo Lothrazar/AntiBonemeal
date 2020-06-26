@@ -1,49 +1,10 @@
 {
-  "homepage": "https://minecraft.curseforge.com/projects/anti-bonemeal",
-  "_legacyhomepage": "http://www.curse.com/mc-mods/minecraft/#-slug",
-  "projectId":232166,
+  "homepage": "https://www.curseforge.com/minecraft/mc-mods/anti-bonemeal",
   "promos": {
-    "1.7.10-latest": "1.0.0",
-    "1.7.10-recommended": "1.0.0",
-    "1.8-latest": "1.1.0",
-    "1.8-recommended": "1.1.0",
-    "1.8.8-latest": "1.1.0",
-    "1.8.8-recommended": "1.1.0",
-    "1.8.9-latest": "1.1.0",
-    "1.8.9-recommended": "1.1.0",
-    "1.9-latest": "1.1.1",
-    "1.9-recommended": "1.1.1",
-    "1.12.2-latest": "1.2.0",
-    "1.12.2-recommended": "1.2.0",
-    "1.14.4-latest": "1.0.0",
-    "1.14.4-recommended": "1.0.0",
-    "1.15.2-latest": "1.0.0",
-    "1.15.2-recommended": "1.0.0"
+    "1.16.2-latest": "1.0.0",
+    "1.16.2-recommended": "1.0.0"
   },
-  "1.7.10": {
-    "1.0.0": "Initial Release"
-  },
-  "1.8": {
-    "1.0.0": "Initial Release",
-    "1.1.0": "Initial Release"
-  },
-  "1.8.8": {
-    "1.1.0": "Initial Release"
-  },
-  "1.8.9": {
-    "1.1.0": "Initial Release"
-  },
-  "1.9": {
-    "1.1.0": "Initial Release",
-    "1.1.1": "Fix a crash from a new API change"
-  },
-  "1.12.2": {
-    "1.2.0": "Mod rewrite for new version.  All new config file.  Now supports Crops, not just saplings."
-  },
-  "1.14.4": {
-    "1.0.0": "Ported."
-  },
-  "1.15.2": {
-    "1.0.0": "Ported."
+  "1.16.2": {
+    "1.0.0": "Ported "
   }
 }
