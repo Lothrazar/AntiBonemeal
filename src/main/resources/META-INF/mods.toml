@@ -47,6 +47,6 @@ Bonemeal is overpowered and duplicates blocks so it is disabled now.  Except nea
 [[dependencies.antibonemeal]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.1]"
+    versionRange="[1.16.1,)"
     ordering="NONE"
     side="BOTH"
