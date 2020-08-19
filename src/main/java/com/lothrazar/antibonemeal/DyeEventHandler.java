@@ -69,9 +69,7 @@ public class DyeEventHandler {
     if (ConfigHandler.tooltipsEnabled() &&
         event.getItemStack().getItem() == Items.BONE_MEAL) {
       event.getToolTip().add(new TranslationTextComponent(ModAnti.MODID + ".item.bone_meal.tooltip")
-          .func_240699_a_(TextFormatting.GRAY)
-//          .applyTextStyle(TextFormatting.GRAY)
-          );
+          .mergeStyle(TextFormatting.GRAY));
     }
   }
 }
