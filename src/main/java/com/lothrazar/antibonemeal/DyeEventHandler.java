@@ -1,15 +1,15 @@
 package com.lothrazar.antibonemeal;
 
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.FireworkRocketEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
-import net.minecraft.world.World;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.FireworkRocketEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.entity.player.BonemealEvent;
@@ -23,7 +23,7 @@ public class DyeEventHandler {
 
   @SubscribeEvent
   public void onBone(BonemealEvent event) {
-    World world = event.getWorld();
+    Level world = event.getWorld();
     double x = event.getPos().getX() + .5;
     double y = event.getPos().getY();
     double z = event.getPos().getZ() + .5;
@@ -49,15 +49,15 @@ public class DyeEventHandler {
     }
   }
 
-  private void doFireworks(PlayerEntity player, World world, double z, double y, double x) {
-    if (world.rand.nextDouble() < 0.05) {
+  private void doFireworks(Player player, Level world, double z, double y, double x) {
+    if (world.random.nextDouble() < 0.05) {
       Entity rocket = new FireworkRocketEntity(world, new ItemStack(Items.FIREWORK_ROCKET), player);
-      rocket.setPosition(x, y, z);
-      world.addEntity(rocket);
+      rocket.setPos(x, y, z);
+      world.addFreshEntity(rocket);
     }
   }
 
-  private void doSmoke(World world, double z, double y, double x) {
+  private void doSmoke(Level world, double z, double y, double x) {
     for (int i = 0; i < 20; i++) {
       world.addParticle(ParticleTypes.SMOKE, x, y, z, 0.0D, 0.2D, 0.0D);
     }
@@ -68,8 +68,8 @@ public class DyeEventHandler {
   public void onItemTooltipEvent(ItemTooltipEvent event) {
     if (ConfigHandler.tooltipsEnabled() &&
         event.getItemStack().getItem() == Items.BONE_MEAL) {
-      event.getToolTip().add(new TranslationTextComponent(ModAnti.MODID + ".item.bone_meal.tooltip")
-          .mergeStyle(TextFormatting.GRAY));
+      event.getToolTip().add(new TranslatableComponent(ModAnti.MODID + ".item.bone_meal.tooltip")
+          .withStyle(ChatFormatting.GRAY));
     }
   }
 }
