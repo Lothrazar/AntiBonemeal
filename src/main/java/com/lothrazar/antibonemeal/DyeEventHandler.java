@@ -63,7 +63,6 @@ public class DyeEventHandler {
     }
   }
 
-  @OnlyIn(Dist.CLIENT)
   @SubscribeEvent
   public void onItemTooltipEvent(ItemTooltipEvent event) {
     if (ConfigHandler.tooltipsEnabled() &&

@@ -23,10 +23,10 @@ version = "${mc_version}-${mod_version}"
 group = 'com.lothrazar.antibonemeal' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'antibonemeal'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(16)
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
-     mappings channel: 'official', version: '1.17.1'
+     mappings channel: 'official', version: '1.18'
     //makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     
     // accessTransformer = file('build/resources/main/META-INF/accesstransformer.cfg')
@@ -92,8 +92,8 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
    //minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
-minecraft 'net.minecraftforge:forge:1.17.1-37.0.7' 
-
+    minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
+   
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
@@ -147,14 +147,10 @@ task signJar(type: SignJar, dependsOn: jar) {
     outputFile = jar.archivePath
 }
 
-build.dependsOn signJar
-
 task copyJar(type: Copy) {
     from jar
     into "${dist_folder}"
 }
-
-build.finalizedBy copyJar
 
 cleanJar {
   delete 'build/libs'
