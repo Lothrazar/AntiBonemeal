@@ -8,10 +8,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -67,7 +65,7 @@ public class DyeEventHandler {
   public void onItemTooltipEvent(ItemTooltipEvent event) {
     if (ConfigHandler.tooltipsEnabled() &&
         event.getItemStack().getItem() == Items.BONE_MEAL) {
-      event.getToolTip().add(new TranslatableComponent(ModAnti.MODID + ".item.bone_meal.tooltip")
+      event.getToolTip().add(Component.translatable(ModAnti.MODID + ".item.bone_meal.tooltip")
           .withStyle(ChatFormatting.GRAY));
     }
   }
