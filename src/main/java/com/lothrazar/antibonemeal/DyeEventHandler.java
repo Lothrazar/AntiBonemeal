@@ -1,15 +1,15 @@
 package com.lothrazar.antibonemeal;
 
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.ChatFormatting;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FireworkRocketEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -21,7 +21,7 @@ public class DyeEventHandler {
 
   @SubscribeEvent
   public void onBone(BonemealEvent event) {
-    Level world = event.getWorld();
+    Level world = event.getLevel();
     double x = event.getPos().getX() + .5;
     double y = event.getPos().getY();
     double z = event.getPos().getZ() + .5;
@@ -37,7 +37,7 @@ public class DyeEventHandler {
       }
       else {// NOT CANCELLED
         //meaning you can bonemeal grass now wooo
-        doFireworks(event.getPlayer(), world, z, y, x);
+        doFireworks(event.getEntity(), world, z, y, x);
       }
     }
     else {
