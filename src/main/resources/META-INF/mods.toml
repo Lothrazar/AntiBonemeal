@@ -52,3 +52,9 @@ Bonemeal is overpowered and duplicates blocks so it is disabled now.  Except nea
     versionRange="[1.19,)"
     ordering="NONE"
     side="BOTH"
+[[dependencies.antibonemeal]]
+    modId="flib"
+    mandatory=true
+    versionRange="[0.0.4,)"
+    ordering="NONE"
+    side="BOTH"
