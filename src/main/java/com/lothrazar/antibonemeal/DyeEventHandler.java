@@ -19,7 +19,7 @@ public class DyeEventHandler {
     double x = event.getPos().getX() + .5;
     double y = event.getPos().getY();
     double z = event.getPos().getZ() + .5;
-    if (ConfigHandler.grassMidnight()
+    if (ConfigRegistryAnti.grassMidnight()
         && event.getBlock().getBlock() == Blocks.GRASS_BLOCK
         && TimeUtil.isWithinHoursOfMidnight(world, 2)) {
       //meaning you can bonemeal grass now wooo
@@ -36,7 +36,7 @@ public class DyeEventHandler {
 
   @SubscribeEvent
   public void onItemTooltipEvent(ItemTooltipEvent event) {
-    if (ConfigHandler.tooltipsEnabled() && event.getItemStack().is(Items.BONE_MEAL)) {
+    if (ConfigRegistryAnti.tooltipsEnabled() && event.getItemStack().is(Items.BONE_MEAL)) {
       event.getToolTip()
           .add(Component.translatable(ModAnti.MODID + ".item.bone_meal.tooltip")
               .withStyle(ChatFormatting.GRAY));

@@ -3,7 +3,7 @@ package com.lothrazar.antibonemeal;
 import com.lothrazar.library.config.ConfigTemplate;
 import net.minecraftforge.common.ForgeConfigSpec;
 
-public class ConfigHandler extends ConfigTemplate {
+public class ConfigRegistryAnti extends ConfigTemplate {
 
   private static final ForgeConfigSpec CONFIG;
   public static ForgeConfigSpec.BooleanValue TOOLTIPS;
@@ -28,7 +28,7 @@ public class ConfigHandler extends ConfigTemplate {
     return GRASS_MIDNIGHT.get();
   }
 
-  public ConfigHandler() {
+  public ConfigRegistryAnti() {
     CONFIG.setConfig(setup(ModAnti.MODID));
   }
 }

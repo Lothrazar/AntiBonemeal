@@ -10,6 +10,6 @@ public class ModAnti {
 
   public ModAnti() {
     MinecraftForge.EVENT_BUS.register(new DyeEventHandler());
-    new ConfigHandler();
+    new ConfigRegistryAnti();
   }
 }
