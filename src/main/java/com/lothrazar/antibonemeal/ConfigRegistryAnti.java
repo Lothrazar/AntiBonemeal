@@ -1,15 +1,15 @@
 package com.lothrazar.antibonemeal;
 
-import com.lothrazar.library.config.ConfigTemplate;
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
-public class ConfigRegistryAnti extends ConfigTemplate {
+public class ConfigRegistryAnti {
 
-  private static final ForgeConfigSpec CONFIG;
-  public static ForgeConfigSpec.BooleanValue TOOLTIPS;
-  public static ForgeConfigSpec.BooleanValue GRASS_MIDNIGHT;
+  static final ModConfigSpec CONFIG;
+  public static ModConfigSpec.BooleanValue TOOLTIPS;
+  public static ModConfigSpec.BooleanValue GRASS_MIDNIGHT;
+
   static {
-    final ForgeConfigSpec.Builder BUILDER = builder();
+    final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
     BUILDER.comment("General settings").push(ModAnti.MODID);
     TOOLTIPS = BUILDER.comment("Bonemeal Tooltip").define("itemTooltip", true);
     GRASS_MIDNIGHT = BUILDER.comment("Allows bonemeal to work during midnight, "
@@ -26,9 +26,5 @@ public class ConfigRegistryAnti extends ConfigTemplate {
 
   public static boolean grassMidnight() {
     return GRASS_MIDNIGHT.get();
-  }
-
-  public ConfigRegistryAnti() {
-    CONFIG.setConfig(setup(ModAnti.MODID));
   }
 }
