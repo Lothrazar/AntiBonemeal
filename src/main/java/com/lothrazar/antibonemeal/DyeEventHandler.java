@@ -7,9 +7,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.event.entity.player.BonemealEvent;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.entity.player.BonemealEvent;
+import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 
 public class DyeEventHandler {
 
@@ -19,12 +19,13 @@ public class DyeEventHandler {
     double x = event.getPos().getX() + .5;
     double y = event.getPos().getY();
     double z = event.getPos().getZ() + .5;
+    var bs = event.getLevel().getBlockState(event.getPos());
     if (ConfigRegistryAnti.grassMidnight()
-        && event.getBlock().getBlock() == Blocks.GRASS_BLOCK
+        && bs.getBlock() == Blocks.GRASS_BLOCK
         && TimeUtil.isWithinHoursOfMidnight(world, 2)) {
       //meaning you can bonemeal grass now wooo
       if (world.random.nextDouble() < 0.05) {
-        ParticleUtil.doFireworks(event.getEntity(), world, z, y, x);
+        ParticleUtil.doFireworks(event.getPlayer(), world, z, y, x);
       }
     }
     else {
