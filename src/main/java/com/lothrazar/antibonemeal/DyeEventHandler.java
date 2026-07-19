@@ -24,7 +24,7 @@ public class DyeEventHandler {
         && bs.getBlock() == Blocks.GRASS_BLOCK
         && TimeUtil.isWithinHoursOfMidnight(world, 2)) {
       //meaning you can bonemeal grass now wooo
-      if (world.random.nextDouble() < 0.05) {
+      if (world.getRandom().nextDouble() < 0.05) {
         ParticleUtil.doFireworks(event.getPlayer(), world, z, y, x);
       }
     }
